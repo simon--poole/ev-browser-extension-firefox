@@ -1,0 +1,14 @@
+{
+    "title": "EventVODs Spoiler Prevention BETA",
+    "name": "ev-browser-extension-firefox",
+    "version": "0.0.3",
+    "description": "Hides related videos, comments and video length by default on Youtube to prevent spoilers.",
+    "main": "index.js",
+    "author": "Simon Poole <simon@eventvods.com>",
+    "engines": {
+        "firefox": ">=38.0a1",
+        "fennec": ">=38.0a1"
+    },
+    "license": "MIT",
+    "keywords": ["eventvods", "spoiler", "free", "esports", "videos", "vidoo", "on", "demand", "replay", "highlights", "league", "of", "legends", "counter", "strike", "global", "offensive", "csgo", "dota", "dota 2", "defence", "of", "the", "ancients", "hearthstone", "hearth", "stone", "hs"]
+}   

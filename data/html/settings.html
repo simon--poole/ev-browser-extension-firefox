@@ -1,0 +1,106 @@
+<!doctype html>
+<html ng-app="evSettings">
+    <head>
+        <title>
+            EventVODs Settings
+        </title>
+    </head>
+    <body ng-controller="evSettingsController">
+        <img src="http://i.imgur.com/6neZM5q.png" id="logo" />
+        <div class="group">
+            <a class="btn lg solid" ng-show="!showChannels" ng-click="showChannels = true">
+                Edit Channel List
+                <svg class="icon">
+                    <symbol id="icon-circle-right" viewBox="0 0 1024 1024">
+                        <title>
+                            circle-right
+                        </title>
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z">
+                        </path>
+                        <path class="path2" d="M354.744 706.744l90.512 90.512 285.254-285.256-285.256-285.254-90.508 90.508 194.744 194.746z">
+                        </path>
+                    </symbol>
+                    <use xlink:href="#icon-circle-right">
+                    </use>
+                </svg>
+            </a>
+            <a class="btn lg solid" ng-show="showChannels" ng-click="save()">
+                Save
+                <svg class="icon">
+                    <symbol id="icon-circle-left" viewBox="0 0 1024 1024">
+                        <title>
+                            circle-left
+                        </title>
+                        <path class="path1" d="M512 1024c282.77 0 512-229.23 512-512s-229.23-512-512-512-512 229.23-512 512 229.23 512 512 512zM512 96c229.75 0 416 186.25 416 416s-186.25 416-416 416-416-186.25-416-416 186.25-416 416-416z">
+                        </path>
+                        <path class="path2" d="M669.256 317.256l-90.512-90.512-285.254 285.256 285.256 285.254 90.508-90.508-194.744-194.746z">
+                        </path>
+                    </symbol>
+                    <use xlink:href="#icon-circle-left">
+                    </use>
+                </svg>
+            </a>
+        </div>
+        <div class="group" ng-show="showChannels" id="channels">
+            <input type="text" placeholder="Filter Channels" ng-model="filter.name" class="form-style" />
+            <ul>
+                <li ng-repeat="c in data.channels | toArray | filter:filter | orderBy:'name'">
+                    <input type="checkbox" ng-attr-id="{{c.name}}" ng-model="c.run" />
+                    <label ng-attr-for="{{c.name}}">
+                        {{c.name.substring(1, c.name.length)}}
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="group" ng-hide="showChannels">
+            <label for="related">
+                Hide Related Videos
+            </label>
+        </div>
+        <div class="square" ng-hide="showChannels">
+            <input type="checkbox" id="related" name="related" class="checkbox" ng-model="data.related" ng-change="save()"/>
+            <label for="related">
+            </label>
+        </div>
+        <div class="group" ng-hide="showChannels">
+            <label for="comments">
+                Hide Comments
+            </label>
+        </div>
+        <div class="square" ng-hide="showChannels">
+            <input type="checkbox" id="comments" name="comments" class="checkbox" ng-model="data.comments" ng-change="save()"/>
+            <label for="comments">
+            </label>
+        </div>
+        <div class="group" ng-hide="showChannels">
+            <label for="length">
+                Hide Video Length
+            </label>
+        </div>
+        <div class="square" ng-hide="showChannels">
+            <input type="checkbox" id="length" name="length" class="checkbox" ng-model="data.length" ng-change="save()"/>
+            <label for="length">
+            </label>
+        </div>
+        <br />
+        <br />
+        <div class="group">
+            <a ng-click="patreon()" href="#">
+                Support EventVODs
+                <svg class="icon icon-new-tab">
+                    <symbol id="icon-new-tab" viewBox="0 0 1024 1024">
+                        <title>
+                            new-tab
+                        </title>
+                        <path class="path1" d="M192 64v768h768v-768h-768zM896 768h-640v-640h640v640zM128 896v-672l-64-64v800h800l-64-64h-672z">
+                        </path>
+                        <path class="path2" d="M352 256l160 160-192 192 96 96 192-192 160 160v-416z">
+                        </path>
+                    </symbol>
+                    <use xlink:href="#icon-new-tab">
+                    </use>
+                </svg>
+            </a>
+        </div>
+    </body>
+</html>
