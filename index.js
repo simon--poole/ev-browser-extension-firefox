@@ -141,6 +141,10 @@ if (!ss.storage.ev || ss.storage.ev.update === true || ss.storage.ev.update === 
 		"UCv3orfdLg5rLIg6qnkCcitA": {
 			name: "6LoL Esports VODs & Highlights",
 			run: true
+		},
+		"UCIquhTRs7QJrzCfiAMwfV8w": {
+			name: "3Dreamhack Media",
+			run: true
 		}
 	},
 	related: true,

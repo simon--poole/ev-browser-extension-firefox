@@ -1,7 +1,7 @@
 {
     "title": "EventVODs Spoiler Prevention BETA",
     "name": "ev-browser-extension-firefox",
-    "version": "1.0.1",
+    "version": "1.0.5",
     "description": "Hides related videos, comments and video length by default on Youtube to prevent spoilers.",
     "main": "index.js",
     "author": "Simon Poole <simon@eventvods.com>",
